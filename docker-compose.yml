@@ -1,0 +1,41 @@
+version: '3'
+services:
+
+  #PHP Service
+    php:
+        build: ./images/php
+        volumes:
+            - ./www:/var/www
+        working_dir: /var/www
+        depends_on:
+            - mysql
+
+  #Nginx Service
+    nginx:
+        image: nginx:alpine
+        volumes:
+            - ./nginx:/etc/nginx/conf.d
+            - ./www:/var/www
+            - ./logs:/var/log/nginx
+        ports:
+            - "42080:80"
+        depends_on:
+            - php
+
+  #MySQL Service
+    mysql:
+        image: mysql:8
+        ports:
+            - "3307:3306"
+        environment:
+            MYSQL_DATABASE: laravel
+            MYSQL_ROOT_PASSWORD: your_mysql_root_password
+            MYSQL_USER: app
+            MYSQL_PASSWORD: root
+        volumes:
+            - dbdata:/var/lib/mysql
+
+#Volumes
+volumes:
+  dbdata:
+    driver: local
