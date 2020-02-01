@@ -4,12 +4,12 @@
     
     git clone https://github.com/tekerrr/docker-for-todo-mvc.git
 
-Перейти в директорию "docker-for-todo-mvc/www" и склонировать резоторий [todo-mvc](https://github.com/tekerrr/todo-mvc)
+Склонировать репозиторий [todo-mvc](https://github.com/tekerrr/todo-mvc)
 
     cd docker-for-todo-mvc/www    
     git clone https://github.com/tekerrr/todo-mvc.git
     
-Перейти в директорию "todo-mvc" и загрузить зависомости с помощью composer
+Загрузить зависомости с помощью composer
 
     cd todo-mvc    
     composer install
