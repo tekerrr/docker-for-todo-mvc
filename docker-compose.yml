@@ -28,10 +28,10 @@ services:
         ports:
             - "3307:3306"
         environment:
-            MYSQL_DATABASE: laravel
-            MYSQL_ROOT_PASSWORD: your_mysql_root_password
-            MYSQL_USER: app
-            MYSQL_PASSWORD: root
+            MYSQL_DATABASE: todomvc
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_USER: user
+            MYSQL_PASSWORD: password
         volumes:
             - dbdata:/var/lib/mysql
 
