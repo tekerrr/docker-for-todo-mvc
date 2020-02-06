@@ -6,23 +6,18 @@
 
 Клонировать репозиторий [todo-mvc](https://github.com/tekerrr/todo-mvc)
 
-    cd docker-for-todo-mvc/www    
+    cd docker-for-todo-mvc/www/
     git clone https://github.com/tekerrr/todo-mvc.git
     
 Загрузить зависимости с помощью composer
 
-    cd todo-mvc    
+    cd todo-mvc/    
     composer install
-
-...
-
-...
-
-...
 
 Запустить docker
 
-    docker-compose up
+    cd ../../
+    docker-compose up -d
 
 Мигрировать БД
 
@@ -30,6 +25,10 @@
     php todo-mvc/database/migrate.php
     exit
     
+Добавить редирект в host
+
+    127.0.0.1 todo-mvc.local
+    
 Запустить проект по ссылке
 
-    todo-mvc:42080/
+    http://todo-mvc.local:42080/
